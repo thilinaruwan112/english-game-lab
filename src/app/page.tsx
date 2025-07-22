@@ -130,7 +130,7 @@ export default function Home() {
 
   return (
     <div className="space-y-24">
-      <section>
+      <section className="flex items-center min-h-[calc(100vh-theme(spacing.14))]">
         <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-center md:text-left">
                 <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary tracking-tight">
