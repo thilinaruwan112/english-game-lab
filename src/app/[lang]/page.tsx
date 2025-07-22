@@ -237,7 +237,7 @@ export default function Home() {
       </section>
       
       <motion.section 
-        className="text-center py-24 bg-secondary px-4"
+        className="text-center py-24 bg-background px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -275,7 +275,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-24 bg-background px-4"
+        className="py-24 bg-secondary px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -305,7 +305,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-24 bg-secondary px-4"
+        className="py-24 bg-background px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -348,7 +348,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-24 bg-background px-4"
+        className="py-24 bg-secondary px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
