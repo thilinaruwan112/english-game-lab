@@ -129,7 +129,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-0">
       <section className="flex items-center min-h-[calc(100vh-theme(spacing.14))]">
         <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-center md:text-left">
@@ -160,10 +160,10 @@ export default function Home() {
         </div>
       </section>
       
-      <section className="text-center">
+      <section className="text-center py-24 bg-secondary">
         <h2 className="text-3xl font-bold font-headline text-primary">{t.featuresTitle}</h2>
         <p className="mt-2 max-w-2xl mx-auto text-lg text-foreground/80">{t.featuresSubtitle}</p>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto">
           {features.map((feature) => (
             <div key={feature.title} className="flex flex-col items-center text-center p-6">
               <div className="mb-4 bg-primary/10 p-4 rounded-full">
@@ -176,8 +176,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-card p-8 md:p-12 rounded-lg shadow-lg">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="py-24">
+        <div className="grid md:grid-cols-2 gap-12 items-center container mx-auto">
           <div className="relative h-80 w-full rounded-lg overflow-hidden">
             <Image 
               src="https://placehold.co/600x400.png"
@@ -210,12 +210,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="text-center">
+      <section className="text-center py-24 bg-secondary">
         <h2 className="text-3xl font-bold font-headline text-primary">{t.testimonialsTitle}</h2>
         <p className="mt-2 max-w-2xl mx-auto text-lg text-foreground/80">{t.testimonialsSubtitle}</p>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto">
             {testimonials.map((testimonial, index) => (
-                <Card key={index} className="text-left shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <Card key={index} className="text-left shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
                     <CardHeader>
                         <div className="flex items-center gap-4">
                             <Avatar>
@@ -237,15 +237,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-primary text-primary-foreground text-center p-12 rounded-lg">
-        <h2 className="text-3xl font-bold font-headline">{t.ctaTitle}</h2>
-        <p className="mt-2 max-w-2xl mx-auto text-lg text-primary-foreground/80">
-          {t.ctaSubtitle}
-        </p>
-        <div className="mt-8">
-          <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/lessons">{t.getStarted}</Link>
-          </Button>
+      <section className="bg-primary text-primary-foreground text-center p-12">
+        <div className="container mx-auto">
+            <h2 className="text-3xl font-bold font-headline">{t.ctaTitle}</h2>
+            <p className="mt-2 max-w-2xl mx-auto text-lg text-primary-foreground/80">
+            {t.ctaSubtitle}
+            </p>
+            <div className="mt-8">
+            <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <Link href="/lessons">{t.getStarted}</Link>
+            </Button>
+            </div>
         </div>
       </section>
 
