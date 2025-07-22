@@ -111,19 +111,19 @@ export default function Home() {
       {
           name: t.testimonial1Name,
           role: t.testimonial1Role,
-          avatar: "https://placehold.co/100x100.png",
+          avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTMxNjk2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
           testimonial: t.testimonial1Text,
       },
       {
           name: t.testimonial2Name,
           role: t.testimonial2Role,
-          avatar: "https://placehold.co/100x100.png",
+          avatar: "https://images.unsplash.com/photo-1521119989659-a83eee488004?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwb3J0cmFpdHxlbnwwfHx8fDE3NTMxNjk2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
           testimonial: t.testimonial2Text,
       },
       {
           name: t.testimonial3Name,
           role: t.testimonial3Role,
-          avatar: "https://placehold.co/100x100.png",
+          avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTMxNjk2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
           testimonial: t.testimonial3Text,
       }
   ]
@@ -132,7 +132,7 @@ export default function Home() {
     <div className="space-y-0">
       <section className="relative flex items-center justify-center min-h-[calc(100vh-theme(spacing.14))] text-center">
         <Image 
-            src="https://placehold.co/1200x800.png"
+            src="https://images.unsplash.com/photo-1603373577790-b635631b0302?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjbGFzc3Jvb20lMjBzdHVkZW50c3xlbnwwfHx8fDE3NTMxNjk2MTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Students learning in a classroom"
             layout="fill"
             objectFit="cover"
@@ -179,7 +179,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-12 items-center container mx-auto">
           <div className="relative h-80 w-full rounded-lg overflow-hidden">
             <Image 
-              src="https://placehold.co/600x400.png"
+              src="https://images.unsplash.com/photo-1580894732930-0babd100d356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWFjaGVyJTIwc3R1ZGVudHxlbnwwfHx8fDE3NTMxNjk2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
               alt="Teacher helping a student"
               layout="fill"
               objectFit="cover"
