@@ -238,7 +238,7 @@ export default function Home() {
       </section>
       
       <motion.section 
-        className="text-center py-24 bg-secondary px-4"
+        className="text-center py-24 bg-background px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -276,7 +276,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-24 bg-background px-4"
+        className="py-24 bg-secondary px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -294,7 +294,7 @@ export default function Home() {
                 variants={itemVariants}
                 transition={{ delay: index * 0.2 }}
               >
-                <div className="bg-background rounded-full p-5 border-4 border-background shadow-lg mb-4">
+                <div className="bg-secondary rounded-full p-5 border-4 border-secondary shadow-lg mb-4">
                     {step.icon}
                 </div>
                 <h3 className="text-xl font-bold font-headline">{step.title}</h3>
@@ -306,7 +306,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-24 bg-secondary px-4"
+        className="py-24 bg-background px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -349,7 +349,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-24 bg-background px-4"
+        className="py-24 bg-secondary px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -368,7 +368,7 @@ export default function Home() {
                         variants={itemVariants}
                         transition={{ delay: index * 0.1 }}
                       >
-                          <AccordionItem value={`item-${index}`} className="bg-secondary border border-border rounded-2xl px-6">
+                          <AccordionItem value={`item-${index}`} className="bg-background border border-border rounded-2xl px-6">
                               <AccordionTrigger className="text-left font-bold text-lg hover:no-underline">{faq.q}</AccordionTrigger>
                               <AccordionContent className="text-muted-foreground pt-2">
                                   {faq.a}
@@ -404,5 +404,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
