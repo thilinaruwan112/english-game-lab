@@ -130,16 +130,24 @@ export default function Home() {
 
   return (
     <div className="space-y-0">
-      <section className="flex items-center min-h-[calc(100vh-theme(spacing.14))]">
-        <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 text-center md:text-left">
+      <section className="relative flex items-center justify-center min-h-[calc(100vh-theme(spacing.14))] text-center">
+        <Image 
+            src="https://placehold.co/1200x800.png"
+            alt="Students learning in a classroom"
+            layout="fill"
+            objectFit="cover"
+            className="absolute inset-0 z-0 opacity-20"
+            data-ai-hint="classroom students"
+        />
+        <div className="relative z-10 container mx-auto px-4">
+            <div className="max-w-3xl mx-auto space-y-6">
                 <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary tracking-tight">
                     {t.heroTitle}
                 </h1>
-                <p className="text-lg text-foreground/80">
+                <p className="text-lg md:text-xl text-foreground/80">
                     {t.heroSubtitle}
                 </p>
-                <div className="flex justify-center md:justify-start gap-4">
+                <div className="flex justify-center gap-4">
                     <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                         <Link href={`/${language}/lessons`}>{t.startLearning}</Link>
                     </Button>
@@ -147,15 +155,6 @@ export default function Home() {
                         <Link href={`/${language}/contact`}>{t.contactUs}</Link>
                     </Button>
                 </div>
-            </div>
-            <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-2xl">
-                <Image 
-                src="https://placehold.co/600x400.png"
-                alt="Happy students learning"
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint="happy students"
-                />
             </div>
         </div>
       </section>
