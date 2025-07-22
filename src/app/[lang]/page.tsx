@@ -86,22 +86,22 @@ export default function Home() {
 
   const features = [
     {
-      icon: <BookOpenCheck className="w-8 h-8 text-primary" />,
+      icon: <BookOpenCheck className="w-8 h-8 text-accent" />,
       title: t.feature1Title,
       description: t.feature1Desc,
     },
     {
-      icon: <Target className="w-8 h-8 text-primary" />,
+      icon: <Target className="w-8 h-8 text-accent" />,
       title: t.feature2Title,
       description: t.feature2Desc,
     },
     {
-      icon: <BotMessageSquare className="w-8 h-8 text-primary" />,
+      icon: <BotMessageSquare className="w-8 h-8 text-accent" />,
       title: t.feature3Title,
       description: t.feature3Desc,
     },
     {
-      icon: <BarChart3 className="w-8 h-8 text-primary" />,
+      icon: <BarChart3 className="w-8 h-8 text-accent" />,
       title: t.feature4Title,
       description: t.feature4Desc,
     },

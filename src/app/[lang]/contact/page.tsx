@@ -104,7 +104,7 @@ export default function ContactPage() {
             <div className="space-y-6">
                 <div className="flex items-start gap-4">
                     <div className="bg-primary/10 p-3 rounded-full">
-                        <Mail className="h-6 w-6 text-primary"/>
+                        <Mail className="h-6 w-6 text-accent"/>
                     </div>
                     <div>
                         <h3 className="font-semibold">Email</h3>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-4">
                     <div className="bg-primary/10 p-3 rounded-full">
-                        <Phone className="h-6 w-6 text-primary"/>
+                        <Phone className="h-6 w-6 text-accent"/>
                     </div>
                     <div>
                         <h3 className="font-semibold">Phone</h3>
@@ -124,7 +124,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-4">
                     <div className="bg-primary/10 p-3 rounded-full">
-                        <MapPin className="h-6 w-6 text-primary"/>
+                        <MapPin className="h-6 w-6 text-accent"/>
                     </div>
                     <div>
                         <h3 className="font-semibold">Our Office</h3>
