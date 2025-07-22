@@ -19,8 +19,6 @@ import { useLanguage } from '@/context/language-context';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/lessons', label: 'Lessons' },
-  { href: '/pronunciation', label: 'Pronunciation' },
-  { href: '/progress', label: 'Progress' },
   { href: '/contact', label: 'Contact' },
   { href: '/register', label: 'Register' },
 ];

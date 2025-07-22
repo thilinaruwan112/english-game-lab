@@ -58,8 +58,6 @@ export function Footer() {
             <ul className="space-y-2">
               <li><Link href={`/${language}`} className="text-sm text-muted-foreground hover:text-primary">{content.home}</Link></li>
               <li><Link href={`/${language}/lessons`} className="text-sm text-muted-foreground hover:text-primary">{content.lessons}</Link></li>
-              <li><Link href={`/${language}/pronunciation`} className="text-sm text-muted-foreground hover:text-primary">{content.pronunciation}</Link></li>
-              <li><Link href={`/${language}/progress`} className="text-sm text-muted-foreground hover:text-primary">{content.progress}</Link></li>
             </ul>
           </div>
 
