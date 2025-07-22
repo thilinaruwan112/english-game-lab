@@ -86,7 +86,7 @@ const content = {
         step2Title: "පුහුණු වී දියුණු වන්න",
         step2Desc: "අන්තර්ක්‍රියාකාරී අභ්‍යාස සම්පූර්ණ කර ඔබගේ උච්චාරණය දියුණු කර ගැනීමට අපගේ AI පුහුණුකරු භාවිතා කරන්න.",
         step3Title: "ඔබේ ඉලක්ක සපුරා ගන්න",
-        step3Desc: "ඔබගේ ප්‍රගතිය නිරීක්ෂණය කරන්න, ඔබේ කුසලතා වැඩි දියුණු වන ආකාරය බලන්න, සහ විශ්වාසයෙන් විභාග සමත් වන්න.",
+        step3Desc: "ඔබගේ ප්‍රගතිය නිරීක්ෂණය කරන්න, ඔබේ කුසලතා වැඩි දියුණු වන ආකාරය බලන්න, සහ විශ්වාසයෙන් විභାග සමත් වන්න.",
         testimonialsTitle: "අපගේ සිසුන් පවසන දේ",
         testimonialsSubtitle: "අප සමඟ සාර්ථකත්වය සොයා ගත් සිසුන්ගේ සැබෑ කතා.",
         testimonial1Name: "කාව්‍යා පෙරේරා",
@@ -220,7 +220,7 @@ export default function Home() {
             data-ai-hint="classroom students"
         />
         <div className="absolute inset-0 bg-black/70 z-10"></div>
-        <div className="relative z-20 container mx-auto px-4 flex flex-col justify-center items-center h-full">
+        <div className="relative z-20 container mx-auto px-4">
             <motion.div 
                 className="max-w-3xl mx-auto space-y-6"
                 initial={{ opacity: 0, y: 20 }}
@@ -242,20 +242,20 @@ export default function Home() {
                     </Button>
                 </div>
             </motion.div>
-            <motion.div
-                className="absolute bottom-4 left-1/2 -translate-x-1/2"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-            >
-                <button
-                    onClick={scrollToFeatures}
-                    className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-                    aria-label="Scroll down"
-                >
-                    <ChevronDown className="w-8 h-8 text-white" />
-                </button>
-            </motion.div>
         </div>
+        <motion.div
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+        >
+            <button
+                onClick={scrollToFeatures}
+                className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                aria-label="Scroll down"
+            >
+                <ChevronDown className="w-8 h-8 text-white" />
+            </button>
+        </motion.div>
       </section>
       
       <motion.section 
@@ -426,5 +426,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
