@@ -12,7 +12,7 @@
     --popover-foreground: 212 95% 10%;
     --primary: 200 45% 45%; /* slate blue #5C7C89 */
     --primary-foreground: 0 0% 100%; /* white */
-    --secondary: 210 100% 98%;
+    --secondary: 210 60% 95%; /* A slightly darker, distinct background */
     --secondary-foreground: 212 95% 10%;
     --muted: 200 30% 80%;
     --muted-foreground: 200 25% 45%;
@@ -40,7 +40,7 @@
     --popover-foreground: 0 0% 98%;
     --primary: 200 45% 55%; /* Lighter slate blue for dark mode */
     --primary-foreground: 212 95% 8%;
-    --secondary: 212 95% 8%;
+    --secondary: 212 95% 12%; /* A slightly lighter, distinct dark background */
     --secondary-foreground: 0 0% 98%;
     --muted: 212 95% 15%;
     --muted-foreground: 200 25% 65%;

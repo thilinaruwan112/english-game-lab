@@ -1,7 +1,7 @@
 
 'use client';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { BookOpenCheck, Target, BotMessageSquare, BarChart3, Star, Quote, CheckCircle, UserPlus, PencilRuler, Goal, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -351,7 +351,7 @@ export default function Home() {
                           <Quote className="w-8 h-8 text-primary/20 mb-4" />
                           <p className="text-card-foreground/80 italic mb-6">{testimonial.text}</p>
                       </CardContent>
-                      <CardFooter className="p-0 mt-auto">
+                      <div className="p-0 mt-auto">
                            <div className="flex items-center gap-4">
                                 <Avatar className='h-12 w-12'>
                                     <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
@@ -362,7 +362,7 @@ export default function Home() {
                                     <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                                 </div>
                             </div>
-                      </CardFooter>
+                      </div>
                   </Card>
               </motion.div>
             ))}
