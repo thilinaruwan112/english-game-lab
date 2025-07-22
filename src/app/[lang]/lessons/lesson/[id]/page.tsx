@@ -1,3 +1,4 @@
+
 'use client';
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
@@ -14,11 +15,13 @@ export default function LessonPage({ params }: { params: { id: string, lang: str
   const allLessons = courseModules.flatMap(m => m.lessons);
   const lesson = allLessons.find(l => l.id === lessonId);
   const currentIndex = allLessons.findIndex(l => l.id === lessonId);
+  const currentModule = courseModules.find(m => m.lessons.some(l => l.id === lessonId));
+
   
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
-  if (!lesson) {
+  if (!lesson || !currentModule) {
     return <div>Lesson not found.</div>;
   }
   
@@ -41,6 +44,13 @@ export default function LessonPage({ params }: { params: { id: string, lang: str
 
   return (
     <div className="max-w-3xl mx-auto container py-8">
+        <div className="mb-8">
+            <Button asChild variant="outline">
+                <Link href={`/${params.lang}/lessons/module/${currentModule.id}`}>
+                    <ArrowLeft className="mr-2 h-4 w-4" /> Back to Lessons
+                </Link>
+            </Button>
+        </div>
       <h1 className="text-4xl font-bold font-headline text-primary mb-2">{lesson.title}</h1>
       <p className="text-lg text-muted-foreground mb-8">Welcome to your lesson. Read the content and complete the exercise below.</p>
 
@@ -86,12 +96,12 @@ export default function LessonPage({ params }: { params: { id: string, lang: str
       <div className="flex justify-between mt-8">
         {prevLesson ? (
           <Button asChild variant="outline">
-            <Link href={`/${params.lang}/lessons/${prevLesson.id}`}><ArrowLeft className="mr-2 h-4 w-4" /> Previous Lesson</Link>
+            <Link href={`/${params.lang}/lessons/lesson/${prevLesson.id}`}><ArrowLeft className="mr-2 h-4 w-4" /> Previous Lesson</Link>
           </Button>
         ) : <div />}
         {nextLesson ? (
           <Button asChild>
-            <Link href={`/${params.lang}/lessons/${nextLesson.id}`}>Next Lesson <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            <Link href={`/${params.lang}/lessons/lesson/${nextLesson.id}`}>Next Lesson <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
         ) : <div />}
       </div>
