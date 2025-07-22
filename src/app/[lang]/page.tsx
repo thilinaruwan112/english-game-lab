@@ -1,7 +1,7 @@
 
 'use client';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { BookOpenCheck, Target, BotMessageSquare, BarChart3, Star, Quote, CheckCircle, UserPlus, PencilRuler, Goal, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -19,8 +19,7 @@ const content = {
     en: {
         heroTitle: "Pass Your English Exam with Confidence",
         heroSubtitle: "EnglishGameLab offers a friendly, supportive path to success for Sri Lankan students. Our 6-9 month course is specially designed to help you ace the O/L English exam.",
-        startLearning: "Start Learning Now",
-        contactUs: "Contact Us",
+        registerNow: "Register Now",
         featuresTitle: "Key Features",
         featuresSubtitle: "Everything you need to succeed in one place.",
         feature1Title: "Structured Lessons",
@@ -67,8 +66,7 @@ const content = {
     si: {
         heroTitle: "විශ්වාසයෙන් ඉංග්‍රීසි විභාගය සමත් වන්න",
         heroSubtitle: "EnglishGameLab ශ්‍රී ලාංකික සිසුන් සඳහා සාර්ථකත්වයට මිත්‍රශීලී, සහායක මාවතක් සපයයි. අපගේ මාස 6-9 පාඨමාලාව O/L ඉංග්‍රීසි විභාගය ජය ගැනීමට ඔබට උපකාර කිරීම සඳහා විශේෂයෙන් නිර්මාණය කර ඇත.",
-        startLearning: "දැන්ම ඉගෙනීම ආරම්භ කරන්න",
-        contactUs: "අප අමතන්න",
+        registerNow: "දැන්ම ලියාපදිංචි වන්න",
         featuresTitle: "ප්‍රධාන අංග",
         featuresSubtitle: "සාර්ථක වීමට ඔබට අවශ්‍ය සියල්ල එකම තැනකින්.",
         feature1Title: "ව්‍යුහගත පාඩම්",
@@ -234,12 +232,20 @@ export default function Home() {
                     {t.heroSubtitle}
                 </p>
                 <div className="flex justify-center gap-4">
-                    <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform hover:scale-105">
-                        <Link href={`/${language}/lessons`}>{t.startLearning}</Link>
-                    </Button>
-                    <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary transition-transform hover:scale-105">
-                        <Link href={`/${language}/contact`}>{t.contactUs}</Link>
-                    </Button>
+                     <motion.div
+                        animate={{
+                            scale: [1, 1.05, 1],
+                        }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                        }}
+                    >
+                        <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform hover:scale-105">
+                            <Link href={`/${language}/register`}>{t.registerNow}</Link>
+                        </Button>
+                    </motion.div>
                 </div>
             </motion.div>
         </div>
@@ -351,18 +357,16 @@ export default function Home() {
                           <Quote className="w-8 h-8 text-primary/20 mb-4" />
                           <p className="text-card-foreground/80 italic mb-6">{testimonial.text}</p>
                       </CardContent>
-                      <CardFooter className="p-0 mt-auto">
-                           <div className="flex items-center gap-4">
-                                <Avatar className='h-12 w-12'>
-                                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
-                                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                                </Avatar>
-                                <div>
-                                    <p className="font-bold">{testimonial.name}</p>
-                                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                                </div>
-                            </div>
-                      </CardFooter>
+                      <div className="flex items-center gap-4 mt-auto p-0">
+                           <Avatar className='h-12 w-12'>
+                                <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
+                                <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                           </Avatar>
+                           <div>
+                                <p className="font-bold">{testimonial.name}</p>
+                                <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                           </div>
+                       </div>
                   </Card>
               </motion.div>
             ))}
@@ -426,3 +430,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
