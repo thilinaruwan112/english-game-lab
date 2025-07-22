@@ -209,7 +209,7 @@ export default function Home() {
 
   return (
     <div className="space-y-0">
-      <section className="relative flex items-center justify-center min-h-[calc(100vh-theme(spacing.14))] text-center text-white animate-fade-in">
+      <section className="relative flex items-center justify-center min-h-[calc(100vh-theme(spacing.14))] text-center text-white">
         <Image 
             src="https://images.unsplash.com/photo-1603373577790-b635631b0302?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjbGFzc3Jvb20lMjBzdHVkZW50c3xlbnwwfHx8fDE3NTMxNjk2MTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Students learning in a classroom"
@@ -220,14 +220,14 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/70 z-10"></div>
         <div className="relative z-20 container mx-auto px-4">
-            <div className="max-w-3xl mx-auto space-y-6">
-                <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight animate-fade-in-up [animation-delay:0.2s]">
+            <div className="max-w-3xl mx-auto space-y-6 animate-fade-in-up">
+                <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
                     {t.heroTitle}
                 </h1>
-                <p className="text-lg md:text-xl text-white/80 animate-fade-in-up [animation-delay:0.4s]">
+                <p className="text-lg md:text-xl text-white/80">
                     {t.heroSubtitle}
                 </p>
-                <div className="flex justify-center gap-4 animate-fade-in-up [animation-delay:0.6s]">
+                <div className="flex justify-center gap-4">
                     <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform hover:scale-105">
                         <Link href={`/${language}/lessons`}>{t.startLearning}</Link>
                     </Button>
