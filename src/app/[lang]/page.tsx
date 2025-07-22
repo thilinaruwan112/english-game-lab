@@ -130,28 +130,29 @@ export default function Home() {
 
   return (
     <div className="space-y-0">
-      <section className="relative flex items-center justify-center min-h-[calc(100vh-theme(spacing.14))] text-center">
+      <section className="relative flex items-center justify-center min-h-[calc(100vh-theme(spacing.14))] text-center text-white">
         <Image 
             src="https://images.unsplash.com/photo-1603373577790-b635631b0302?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjbGFzc3Jvb20lMjBzdHVkZW50c3xlbnwwfHx8fDE3NTMxNjk2MTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Students learning in a classroom"
             layout="fill"
             objectFit="cover"
-            className="absolute inset-0 z-0 opacity-20"
+            className="absolute inset-0 z-0"
             data-ai-hint="classroom students"
         />
-        <div className="relative z-10 container mx-auto px-4">
+        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <div className="relative z-20 container mx-auto px-4">
             <div className="max-w-3xl mx-auto space-y-6">
-                <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary tracking-tight">
+                <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
                     {t.heroTitle}
                 </h1>
-                <p className="text-lg md:text-xl text-foreground/80">
+                <p className="text-lg md:text-xl text-white/80">
                     {t.heroSubtitle}
                 </p>
                 <div className="flex justify-center gap-4">
                     <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                         <Link href={`/${language}/lessons`}>{t.startLearning}</Link>
                     </Button>
-                    <Button asChild size="lg" variant="outline">
+                    <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
                         <Link href={`/${language}/contact`}>{t.contactUs}</Link>
                     </Button>
                 </div>
@@ -253,3 +254,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
