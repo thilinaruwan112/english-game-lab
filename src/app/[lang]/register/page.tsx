@@ -37,7 +37,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12 flex items-center justify-center">
+    <div className="container mx-auto py-12 flex items-center justify-center">
       <Card className="w-full max-w-lg shadow-2xl">
         <CardHeader className="text-center">
           <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">

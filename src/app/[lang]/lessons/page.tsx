@@ -10,7 +10,7 @@ import { courseModules } from "@/lib/constants";
 
 export default function LessonsPage({ params }: { params: { lang: string }}) {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto py-8 md:py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold font-headline text-primary">Course Content</h1>
         <p className="mt-2 max-w-2xl mx-auto text-lg text-foreground/80">
@@ -26,7 +26,7 @@ export default function LessonsPage({ params }: { params: { lang: string }}) {
                 {module.title}
               </AccordionTrigger>
               <AccordionContent>
-                <ul className="space-y-4 p-4">
+                <ul className="space-y-4 p-2 md:p-4">
                   {module.lessons.map((lesson) => (
                     <li key={lesson.id}>
                       <Link href={`/${params.lang}/lessons/${lesson.id}`}>
