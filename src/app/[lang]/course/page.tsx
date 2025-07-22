@@ -90,29 +90,29 @@ export default function CoursePage({ params }: { params: { lang: string } }) {
         <main className="lg:col-span-3">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {filteredCourses.map((module) => (
-              <Card key={module.id} className="flex flex-col group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="relative">
-                  <Image
-                    src={module.image}
-                    alt={module.title}
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-48 transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={module.hint}
-                  />
-                </div>
-                <CardContent className="p-4 flex-grow flex flex-col">
-                  <h3 className="text-lg font-bold font-headline mb-2 flex-grow">{module.title}</h3>
-                  <div className="flex justify-between items-center mt-auto">
-                    <p className="text-xl font-bold text-primary">LKR {module.price.toLocaleString()}</p>
-                    <Link href={`/${params.lang}/course/module/${module.id}`}>
-                      <Button variant="ghost" size="icon" className="text-primary group-hover:translate-x-1 transition-transform">
-                          <ArrowRight className="h-5 w-5" />
-                      </Button>
-                    </Link>
+              <Link href={`/${params.lang}/course/module/${module.id}`} key={module.id} className="group">
+                <Card className="flex flex-col h-full overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="relative">
+                    <Image
+                      src={module.image}
+                      alt={module.title}
+                      width={600}
+                      height={400}
+                      className="object-cover w-full h-48 transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={module.hint}
+                    />
                   </div>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-4 flex-grow flex flex-col">
+                    <h3 className="text-lg font-bold font-headline mb-2 flex-grow">{module.title}</h3>
+                    <div className="flex justify-between items-center mt-auto">
+                      <p className="text-xl font-bold text-primary">LKR {module.price.toLocaleString()}</p>
+                      <div className="text-primary group-hover:translate-x-1 transition-transform">
+                          <ArrowRight className="h-5 w-5" />
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
              {filteredCourses.length === 0 && (
                 <div className="md:col-span-2 xl:col-span-3 text-center py-16">
