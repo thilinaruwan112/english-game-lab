@@ -1,6 +1,7 @@
 export const courseModules = [
   {
     id: "module-1",
+    slug: "beginners-english-the-fundamentals",
     title: "Beginner's English: The Fundamentals",
     category: "Beginner",
     price: 1500,
@@ -14,6 +15,7 @@ export const courseModules = [
   },
   {
     id: "module-2",
+    slug: "intermediate-english-build-your-vocabulary",
     title: "Intermediate English: Build Your Vocabulary",
     category: "Intermediate",
     price: 2500,
@@ -27,6 +29,7 @@ export const courseModules = [
   },
   {
     id: "module-3",
+    slug: "advanced-english-master-essential-grammar",
     title: "Advanced English: Master Essential Grammar",
     category: "Advanced",
     price: 3000,
@@ -40,6 +43,7 @@ export const courseModules = [
   },
   {
     id: "module-4",
+    slug: "spoken-english-practice",
     title: "Spoken English Practice",
     category: "Intermediate",
     price: 4000,

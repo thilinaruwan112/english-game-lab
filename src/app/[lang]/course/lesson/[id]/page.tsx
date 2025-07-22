@@ -46,7 +46,7 @@ export default function LessonPage({ params }: { params: { id: string, lang: str
     <div className="max-w-3xl mx-auto container py-8">
         <div className="mb-8">
             <Button asChild variant="outline">
-                <Link href={`/${params.lang}/course/module/${currentModule.id}`}>
+                <Link href={`/${params.lang}/course/${currentModule.slug}`}>
                     <ArrowLeft className="mr-2 h-4 w-4" /> Back to Lessons
                 </Link>
             </Button>
