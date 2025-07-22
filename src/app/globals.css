@@ -32,30 +32,30 @@
   }
 
   .dark {
-    --background: 212 95% 8%; /* #011425 - very dark blue */
-    --foreground: 0 0% 98%; /* white */
-    --card: 212 95% 10%; /* Slightly lighter than background */
+    --background: 0 0% 4%; /* Near-black for background */
+    --foreground: 0 0% 98%; /* White text */
+    --card: 0 0% 8%; /* Slightly lighter than background for cards */
     --card-foreground: 0 0% 98%;
-    --popover: 212 95% 8%;
+    --popover: 0 0% 4%;
     --popover-foreground: 0 0% 98%;
-    --primary: 200 45% 55%; /* Lighter slate blue for dark mode */
-    --primary-foreground: 212 95% 8%;
-    --secondary: 212 95% 12%; /* A slightly lighter, distinct dark background */
+    --primary: 25 95% 53%; /* Bright Orange */
+    --primary-foreground: 0 0% 10%; /* Dark text on orange buttons */
+    --secondary: 0 0% 12%; /* Dark gray for secondary elements */
     --secondary-foreground: 0 0% 98%;
-    --muted: 212 95% 15%;
-    --muted-foreground: 200 25% 65%;
-    --accent: 200 45% 55%;
-    --accent-foreground: 212 95% 8%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 25 95% 53%; /* Orange for accent */
+    --accent-foreground: 0 0% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 212 95% 15%;
-    --input: 212 95% 15%;
-    --ring: 200 45% 55%;
-    --chart-1: 197 50% 33%;
-    --chart-2: 200 45% 55%;
-    --chart-3: 0 0% 98%;
-    --chart-4: 212 95% 15%;
-    --chart-5: 200 25% 65%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 25 95% 53%;
+    --chart-1: 25 95% 53%; /* Orange */
+    --chart-2: 0 0% 80%;
+    --chart-3: 0 0% 60%;
+    --chart-4: 0 0% 40%;
+    --chart-5: 0 0% 20%;
     --radius: 1rem;
   }
 }
