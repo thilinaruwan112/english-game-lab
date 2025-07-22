@@ -13,18 +13,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { lang: 'en' | 'si' };
 }>) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
+    <html lang={params.lang || 'si'} className="h-full" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased flex flex-col h-full">
-        <LanguageProvider>
+        <LanguageProvider lang={params.lang}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

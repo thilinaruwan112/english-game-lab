@@ -1,7 +1,11 @@
+'use client';
+
 import Link from 'next/link';
 import { BookOpenCheck } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
 export function Footer() {
+  const { language } = useLanguage();
   return (
     <footer className="border-t bg-card">
       <div className="container mx-auto px-4 py-8">
@@ -14,7 +18,7 @@ export function Footer() {
             © {new Date().getFullYear()} EnglishGameLab. All rights reserved.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
-             <Link href="/contact" className="text-sm text-muted-foreground hover:text-primary">
+             <Link href={`/${language}/contact`} className="text-sm text-muted-foreground hover:text-primary">
               Contact
             </Link>
              <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
