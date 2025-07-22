@@ -209,7 +209,7 @@ export default function Home() {
 
   return (
     <div className="space-y-0">
-      <section className="relative flex items-center justify-center min-h-[calc(100vh-theme(spacing.14))] text-center text-white">
+      <section className="relative flex items-center justify-center min-h-[calc(100vh-theme(spacing.14))] text-center text-white animate-fade-in">
         <Image 
             src="https://images.unsplash.com/photo-1603373577790-b635631b0302?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjbGFzc3Jvb20lMjBzdHVkZW50c3xlbnwwfHx8fDE3NTMxNjk2MTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Students learning in a classroom"
@@ -221,17 +221,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/70 z-10"></div>
         <div className="relative z-20 container mx-auto px-4">
             <div className="max-w-3xl mx-auto space-y-6">
-                <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
+                <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight animate-fade-in-up [animation-delay:0.2s]">
                     {t.heroTitle}
                 </h1>
-                <p className="text-lg md:text-xl text-white/80">
+                <p className="text-lg md:text-xl text-white/80 animate-fade-in-up [animation-delay:0.4s]">
                     {t.heroSubtitle}
                 </p>
-                <div className="flex justify-center gap-4">
-                    <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <div className="flex justify-center gap-4 animate-fade-in-up [animation-delay:0.6s]">
+                    <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform hover:scale-105">
                         <Link href={`/${language}/lessons`}>{t.startLearning}</Link>
                     </Button>
-                    <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
+                    <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary transition-transform hover:scale-105">
                         <Link href={`/${language}/contact`}>{t.contactUs}</Link>
                     </Button>
                 </div>
@@ -241,11 +241,11 @@ export default function Home() {
       
       <section className="text-center py-24 bg-background px-4">
         <div className="container mx-auto">
-            <h2 className="text-3xl font-bold font-headline text-foreground">{t.featuresTitle}</h2>
-            <p className="mt-2 max-w-2xl mx-auto text-lg text-muted-foreground">{t.featuresSubtitle}</p>
+            <h2 className="text-3xl font-bold font-headline text-foreground animate-fade-in-up">{t.featuresTitle}</h2>
+            <p className="mt-2 max-w-2xl mx-auto text-lg text-muted-foreground animate-fade-in-up [animation-delay:0.2s]">{t.featuresSubtitle}</p>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature) => (
-                <div key={feature.title} className="flex flex-col items-center text-center p-6">
+            {features.map((feature, index) => (
+                <div key={feature.title} className="flex flex-col items-center text-center p-6 animate-fade-in-up" style={{animationDelay: `${0.4 + index * 0.1}s`}}>
                 <div className="mb-4 bg-primary/10 p-4 rounded-full">
                     {feature.icon}
                 </div>
@@ -259,13 +259,13 @@ export default function Home() {
 
       <section className="text-center py-24 bg-secondary px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold font-headline text-secondary-foreground">{t.howItWorksTitle}</h2>
-          <p className="mt-2 max-w-2xl mx-auto text-lg text-secondary-foreground/80">{t.howItWorksSubtitle}</p>
+          <h2 className="text-3xl font-bold font-headline text-secondary-foreground animate-fade-in-up">{t.howItWorksTitle}</h2>
+          <p className="mt-2 max-w-2xl mx-auto text-lg text-secondary-foreground/80 animate-fade-in-up [animation-delay:0.2s]">{t.howItWorksSubtitle}</p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary/20 md:block hidden"></div>
+            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary/20 md:block hidden animate-slide-in-left"></div>
              {howItWorksSteps.map((step, index) => (
-              <div key={step.title} className="flex flex-col items-center text-center z-10">
-                <div className="mb-4 bg-secondary p-4 rounded-full border-4 border-primary/20">
+              <div key={step.title} className="flex flex-col items-center text-center z-10 animate-fade-in-up" style={{animationDelay: `${0.4 + index * 0.2}s`}}>
+                <div className="mb-4 bg-secondary p-4 rounded-full border-4 border-primary/20 transition-transform hover:scale-110">
                     {step.icon}
                 </div>
                 <h3 className="font-headline text-xl font-semibold text-secondary-foreground">{step.title}</h3>
@@ -278,7 +278,7 @@ export default function Home() {
 
       <section className="py-24 px-4 bg-background">
         <div className="grid md:grid-cols-2 gap-12 items-center container mx-auto">
-          <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-lg">
+          <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-lg animate-slide-in-left">
             <Image 
               src="https://images.unsplash.com/photo-1580894732930-0babd100d356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWFjaGVyJTIwc3R1ZGVudHxlbnwwfHx8fDE3NTMxNjk2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
               alt="Teacher helping a student"
@@ -287,7 +287,7 @@ export default function Home() {
               data-ai-hint="teacher student"
             />
           </div>
-          <div>
+          <div className="animate-slide-in-right">
             <h2 className="text-3xl font-bold font-headline text-primary">{t.approachTitle}</h2>
             <p className="mt-4 text-muted-foreground">
               {t.approachDesc}
@@ -312,11 +312,11 @@ export default function Home() {
 
       <section className="text-center py-24 bg-secondary px-4">
         <div className="container mx-auto">
-            <h2 className="text-3xl font-bold font-headline text-secondary-foreground">{t.testimonialsTitle}</h2>
-            <p className="mt-2 max-w-2xl mx-auto text-lg text-secondary-foreground/80">{t.testimonialsSubtitle}</p>
+            <h2 className="text-3xl font-bold font-headline text-secondary-foreground animate-fade-in-up">{t.testimonialsTitle}</h2>
+            <p className="mt-2 max-w-2xl mx-auto text-lg text-secondary-foreground/80 animate-fade-in-up [animation-delay:0.2s]">{t.testimonialsSubtitle}</p>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {testimonials.map((testimonial, index) => (
-                    <Card key={index} className="text-left shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
+                    <Card key={index} className="text-left shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card hover:-translate-y-2 animate-fade-in-up" style={{animationDelay: `${0.4 + index * 0.1}s`}}>
                         <CardHeader>
                             <div className="flex items-center gap-4">
                                 <Avatar>
@@ -340,7 +340,7 @@ export default function Home() {
       </section>
       
       <section className="py-24 bg-background px-4">
-          <div className="container mx-auto max-w-4xl">
+          <div className="container mx-auto max-w-4xl animate-fade-in-up">
               <div className="text-center mb-12">
                   <h2 className="text-3xl font-bold font-headline text-foreground">{t.faqTitle}</h2>
                   <p className="mt-2 max-w-2xl mx-auto text-lg text-muted-foreground">{t.faqSubtitle}</p>
@@ -359,13 +359,13 @@ export default function Home() {
       </section>
 
       <section className="bg-primary text-primary-foreground text-center p-12">
-        <div className="container mx-auto">
+        <div className="container mx-auto animate-fade-in">
             <h2 className="text-3xl font-bold font-headline">{t.ctaTitle}</h2>
             <p className="mt-2 max-w-2xl mx-auto text-lg text-primary-foreground/80">
             {t.ctaSubtitle}
             </p>
             <div className="mt-8">
-            <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform hover:scale-105">
                 <Link href={`/${language}/lessons`}>{t.getStarted}</Link>
             </Button>
             </div>
