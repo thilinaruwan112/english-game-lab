@@ -48,11 +48,11 @@ export default function CoursePage({ params }: { params: { lang: string } }) {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Filters Sidebar */}
         <aside className="lg:col-span-1">
-          <Card className="p-6 sticky top-20">
+          <Card className="p-4 sticky top-20">
             <h3 className="text-xl font-bold mb-4 flex items-center"><ListFilter className="mr-2 h-5 w-5" /> Filters</h3>
             
             {/* Category Filter */}
-            <div className="mb-8">
+            <div className="mb-6">
               <h4 className="font-semibold mb-3">Category</h4>
               <div className="space-y-2">
                 {categories.map(category => (
@@ -88,7 +88,7 @@ export default function CoursePage({ params }: { params: { lang: string } }) {
 
         {/* Course Grid */}
         <main className="lg:col-span-3">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {filteredCourses.map((module) => (
               <Link href={`/${params.lang}/course/module/${module.id}`} key={module.id} className="group">
                 <Card className="flex flex-col h-full overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
