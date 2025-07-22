@@ -139,22 +139,22 @@ export default function Home() {
 
   const features = [
     {
-      icon: <BookOpenCheck className="w-8 h-8 text-primary" />,
+      icon: <BookOpenCheck className="w-8 h-8 text-primary-foreground" />,
       title: t.feature1Title,
       description: t.feature1Desc,
     },
     {
-      icon: <Target className="w-8 h-8 text-primary" />,
+      icon: <Target className="w-8 h-8 text-primary-foreground" />,
       title: t.feature2Title,
       description: t.feature2Desc,
     },
     {
-      icon: <BotMessageSquare className="w-8 h-8 text-primary" />,
+      icon: <BotMessageSquare className="w-8 h-8 text-primary-foreground" />,
       title: t.feature3Title,
       description: t.feature3Desc,
     },
     {
-      icon: <BarChart3 className="w-8 h-8 text-primary" />,
+      icon: <BarChart3 className="w-8 h-8 text-primary-foreground" />,
       title: t.feature4Title,
       description: t.feature4Desc,
     },
@@ -269,7 +269,6 @@ export default function Home() {
             {features.map((feature, index) => (
                 <motion.div 
                   key={feature.title} 
-                  className="flex flex-col items-center text-center p-6"
                   variants={itemVariants}
                   initial="hidden"
                   whileInView="visible"
@@ -277,11 +276,17 @@ export default function Home() {
                   custom={index}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <div className="mb-4 bg-primary/10 p-4 rounded-full">
-                      {feature.icon}
-                  </div>
-                  <h3 className="font-headline text-xl font-semibold text-foreground">{feature.title}</h3>
-                  <p className="mt-2 text-muted-foreground">{feature.description}</p>
+                  <Card className="bg-card text-card-foreground shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl h-full">
+                      <CardContent className="p-6 flex items-center gap-6">
+                           <div className="bg-primary p-4 rounded-xl">
+                              {feature.icon}
+                           </div>
+                           <div className="text-left">
+                              <h3 className="font-headline text-xl font-semibold">{feature.title}</h3>
+                              <p className="mt-1 text-muted-foreground">{feature.description}</p>
+                           </div>
+                      </CardContent>
+                  </Card>
                 </motion.div>
             ))}
             </div>
@@ -388,7 +393,7 @@ export default function Home() {
                       custom={index}
                       transition={{ delay: index * 0.1 }}
                     >
-                      <Card className="text-left shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card hover:-translate-y-2">
+                      <Card className="text-left shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card hover:-translate-y-2 rounded-2xl">
                           <CardHeader>
                               <div className="flex items-center gap-4">
                                   <Avatar>
@@ -426,9 +431,11 @@ export default function Home() {
               </div>
               <Accordion type="single" collapsible className="w-full">
                   {faqs.map((faq, index) => (
-                      <AccordionItem key={index} value={`item-${index}`}>
-                          <AccordionTrigger className="text-lg font-semibold text-left">{faq.question}</AccordionTrigger>
-                          <AccordionContent className="text-base text-muted-foreground">
+                      <AccordionItem key={index} value={`item-${index}`} className="border-b-0">
+                          <AccordionTrigger className="text-lg font-semibold text-left p-4 bg-card rounded-2xl hover:no-underline">
+                            <span>{faq.question}</span>
+                          </AccordionTrigger>
+                          <AccordionContent className="text-base text-muted-foreground p-4 bg-card rounded-b-2xl">
                               {faq.answer}
                           </AccordionContent>
                       </AccordionItem>
