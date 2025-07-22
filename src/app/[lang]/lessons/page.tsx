@@ -10,7 +10,7 @@ import { courseModules } from "@/lib/constants";
 
 export default function LessonsPage({ params }: { params: { lang: string }}) {
   return (
-    <div>
+    <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold font-headline text-primary">Course Content</h1>
         <p className="mt-2 max-w-2xl mx-auto text-lg text-foreground/80">

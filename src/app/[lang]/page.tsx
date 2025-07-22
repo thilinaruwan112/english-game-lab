@@ -160,7 +160,7 @@ export default function Home() {
         </div>
       </section>
       
-      <section className="text-center py-24 bg-secondary">
+      <section className="text-center py-24 bg-secondary px-4">
         <h2 className="text-3xl font-bold font-headline text-primary">{t.featuresTitle}</h2>
         <p className="mt-2 max-w-2xl mx-auto text-lg text-foreground/80">{t.featuresSubtitle}</p>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto">
@@ -176,7 +176,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-24 px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center container mx-auto">
           <div className="relative h-80 w-full rounded-lg overflow-hidden">
             <Image 
@@ -210,7 +210,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="text-center py-24 bg-secondary">
+      <section className="text-center py-24 bg-secondary px-4">
         <h2 className="text-3xl font-bold font-headline text-primary">{t.testimonialsTitle}</h2>
         <p className="mt-2 max-w-2xl mx-auto text-lg text-foreground/80">{t.testimonialsSubtitle}</p>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto">
@@ -254,5 +254,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

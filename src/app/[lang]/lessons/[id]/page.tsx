@@ -40,7 +40,7 @@ export default function LessonPage({ params }: { params: { id: string, lang: str
   };
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto container px-4 py-8">
       <h1 className="text-4xl font-bold font-headline text-primary mb-2">{lesson.title}</h1>
       <p className="text-lg text-muted-foreground mb-8">Welcome to your lesson. Read the content and complete the exercise below.</p>
 
