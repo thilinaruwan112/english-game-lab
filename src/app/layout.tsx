@@ -5,6 +5,7 @@ import { Footer } from '@/components/common/Footer';
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from '@/components/theme-provider';
 import { LanguageProvider } from '@/context/language-context';
+import { WhatsappButton } from '@/components/common/WhatsappButton';
 
 export const metadata: Metadata = {
   title: 'EnglishGameLab',
@@ -37,6 +38,7 @@ export default function RootLayout({
             <main className="flex-grow">
               {children}
             </main>
+            <WhatsappButton />
             <Footer />
             <Toaster />
           </ThemeProvider>

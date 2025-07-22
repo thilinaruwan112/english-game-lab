@@ -22,6 +22,7 @@ const navLinks = [
   { href: '/pronunciation', label: 'Pronunciation' },
   { href: '/progress', label: 'Progress' },
   { href: '/contact', label: 'Contact' },
+  { href: '/register', label: 'Register' },
 ];
 
 export function Header() {
