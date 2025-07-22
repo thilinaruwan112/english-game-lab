@@ -11,7 +11,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
+import { motion } from 'framer-motion';
 
 const content = {
     en: {
@@ -122,6 +123,16 @@ const content = {
     }
 }
 
+const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
 export default function Home() {
     const { language } = useLanguage();
     const t = content[language] || content.si;
@@ -220,7 +231,12 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/70 z-10"></div>
         <div className="relative z-20 container mx-auto px-4">
-            <div className="max-w-3xl mx-auto space-y-6 animate-fade-in-up">
+            <motion.div 
+                className="max-w-3xl mx-auto space-y-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+            >
                 <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
                     {t.heroTitle}
                 </h1>
@@ -235,50 +251,89 @@ export default function Home() {
                         <Link href={`/${language}/contact`}>{t.contactUs}</Link>
                     </Button>
                 </div>
-            </div>
+            </motion.div>
         </div>
       </section>
       
-      <section className="text-center py-24 bg-background px-4">
+      <motion.section 
+        className="text-center py-24 bg-background px-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <div className="container mx-auto">
-            <h2 className="text-3xl font-bold font-headline text-foreground animate-fade-in-up">{t.featuresTitle}</h2>
-            <p className="mt-2 max-w-2xl mx-auto text-lg text-muted-foreground animate-fade-in-up [animation-delay:0.2s]">{t.featuresSubtitle}</p>
+            <h2 className="text-3xl font-bold font-headline text-foreground">{t.featuresTitle}</h2>
+            <p className="mt-2 max-w-2xl mx-auto text-lg text-muted-foreground">{t.featuresSubtitle}</p>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-                <div key={feature.title} className="flex flex-col items-center text-center p-6 animate-fade-in-up" style={{animationDelay: `${0.4 + index * 0.1}s`}}>
-                <div className="mb-4 bg-primary/10 p-4 rounded-full">
-                    {feature.icon}
-                </div>
-                <h3 className="font-headline text-xl font-semibold text-foreground">{feature.title}</h3>
-                <p className="mt-2 text-muted-foreground">{feature.description}</p>
-                </div>
+                <motion.div 
+                  key={feature.title} 
+                  className="flex flex-col items-center text-center p-6"
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={index}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="mb-4 bg-primary/10 p-4 rounded-full">
+                      {feature.icon}
+                  </div>
+                  <h3 className="font-headline text-xl font-semibold text-foreground">{feature.title}</h3>
+                  <p className="mt-2 text-muted-foreground">{feature.description}</p>
+                </motion.div>
             ))}
             </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="text-center py-24 bg-secondary px-4">
+      <motion.section 
+        className="text-center py-24 bg-secondary px-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold font-headline text-secondary-foreground animate-fade-in-up">{t.howItWorksTitle}</h2>
-          <p className="mt-2 max-w-2xl mx-auto text-lg text-secondary-foreground/80 animate-fade-in-up [animation-delay:0.2s]">{t.howItWorksSubtitle}</p>
+          <h2 className="text-3xl font-bold font-headline text-secondary-foreground">{t.howItWorksTitle}</h2>
+          <p className="mt-2 max-w-2xl mx-auto text-lg text-secondary-foreground/80">{t.howItWorksSubtitle}</p>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary/20 md:block hidden animate-slide-in-left"></div>
+            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary/20 md:block hidden"></div>
              {howItWorksSteps.map((step, index) => (
-              <div key={step.title} className="flex flex-col items-center text-center z-10 animate-fade-in-up" style={{animationDelay: `${0.4 + index * 0.2}s`}}>
+              <motion.div 
+                key={step.title} 
+                className="flex flex-col items-center text-center z-10"
+                variants={itemVariants}
+                custom={index}
+                transition={{ delay: index * 0.2 }}
+              >
                 <div className="mb-4 bg-secondary p-4 rounded-full border-4 border-primary/20 transition-transform hover:scale-110">
                     {step.icon}
                 </div>
                 <h3 className="font-headline text-xl font-semibold text-secondary-foreground">{step.title}</h3>
                 <p className="mt-2 text-secondary-foreground/70">{step.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="py-24 px-4 bg-background">
+      <motion.section 
+        className="py-24 px-4 bg-background"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <div className="grid md:grid-cols-2 gap-12 items-center container mx-auto">
-          <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-lg animate-slide-in-left">
+          <motion.div 
+            className="relative h-80 w-full rounded-lg overflow-hidden shadow-lg"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <Image 
               src="https://images.unsplash.com/photo-1580894732930-0babd100d356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWFjaGVyJTIwc3R1ZGVudHxlbnwwfHx8fDE3NTMxNjk2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
               alt="Teacher helping a student"
@@ -286,8 +341,13 @@ export default function Home() {
               objectFit="cover"
               data-ai-hint="teacher student"
             />
-          </div>
-          <div className="animate-slide-in-right">
+          </motion.div>
+          <motion.div
+             initial={{ opacity: 0, x: 50 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.6 }}
+          >
             <h2 className="text-3xl font-bold font-headline text-primary">{t.approachTitle}</h2>
             <p className="mt-4 text-muted-foreground">
               {t.approachDesc}
@@ -306,41 +366,60 @@ export default function Home() {
                     <span>{t.approachPoint3}</span>
                 </li>
             </ul>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="text-center py-24 bg-secondary px-4">
+      <motion.section 
+        className="text-center py-24 bg-secondary px-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+        >
         <div className="container mx-auto">
-            <h2 className="text-3xl font-bold font-headline text-secondary-foreground animate-fade-in-up">{t.testimonialsTitle}</h2>
-            <p className="mt-2 max-w-2xl mx-auto text-lg text-secondary-foreground/80 animate-fade-in-up [animation-delay:0.2s]">{t.testimonialsSubtitle}</p>
+            <h2 className="text-3xl font-bold font-headline text-secondary-foreground">{t.testimonialsTitle}</h2>
+            <p className="mt-2 max-w-2xl mx-auto text-lg text-secondary-foreground/80">{t.testimonialsSubtitle}</p>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {testimonials.map((testimonial, index) => (
-                    <Card key={index} className="text-left shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card hover:-translate-y-2 animate-fade-in-up" style={{animationDelay: `${0.4 + index * 0.1}s`}}>
-                        <CardHeader>
-                            <div className="flex items-center gap-4">
-                                <Avatar>
-                                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint="portrait" />
-                                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                                </Avatar>
-                                <div>
-                                    <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                                    <CardDescription>{testimonial.role}</CardDescription>
-                                </div>
-                            </div>
-                        </CardHeader>
-                        <CardContent>
-                            <Quote className="w-8 h-8 text-primary/20 mb-2" />
-                            <p className="text-card-foreground/80 italic">{testimonial.testimonial}</p>
-                        </CardContent>
-                    </Card>
+                    <motion.div
+                      key={index}
+                      variants={itemVariants}
+                      custom={index}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <Card className="text-left shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card hover:-translate-y-2">
+                          <CardHeader>
+                              <div className="flex items-center gap-4">
+                                  <Avatar>
+                                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint="portrait" />
+                                      <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                                  </Avatar>
+                                  <div>
+                                      <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                                      <CardDescription>{testimonial.role}</CardDescription>
+                                  </div>
+                              </div>
+                          </CardHeader>
+                          <CardContent>
+                              <Quote className="w-8 h-8 text-primary/20 mb-2" />
+                              <p className="text-card-foreground/80 italic">{testimonial.testimonial}</p>
+                          </CardContent>
+                      </Card>
+                    </motion.div>
                 ))}
             </div>
         </div>
-      </section>
+      </motion.section>
       
-      <section className="py-24 bg-background px-4">
-          <div className="container mx-auto max-w-4xl animate-fade-in-up">
+      <motion.section 
+        className="py-24 bg-background px-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+        >
+          <div className="container mx-auto max-w-4xl">
               <div className="text-center mb-12">
                   <h2 className="text-3xl font-bold font-headline text-foreground">{t.faqTitle}</h2>
                   <p className="mt-2 max-w-2xl mx-auto text-lg text-muted-foreground">{t.faqSubtitle}</p>
@@ -356,10 +435,16 @@ export default function Home() {
                   ))}
               </Accordion>
           </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-primary text-primary-foreground text-center p-12">
-        <div className="container mx-auto animate-fade-in">
+      <motion.section 
+        className="bg-primary text-primary-foreground text-center p-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={sectionVariants}
+        >
+        <div className="container mx-auto">
             <h2 className="text-3xl font-bold font-headline">{t.ctaTitle}</h2>
             <p className="mt-2 max-w-2xl mx-auto text-lg text-primary-foreground/80">
             {t.ctaSubtitle}
@@ -370,7 +455,7 @@ export default function Home() {
             </Button>
             </div>
         </div>
-      </section>
+      </motion.section>
 
     </div>
   );
