@@ -294,7 +294,7 @@ export default function Home() {
                 variants={itemVariants}
                 transition={{ delay: index * 0.2 }}
               >
-                <div className="bg-secondary rounded-full p-5 border-4 border-secondary shadow-lg mb-4">
+                <div className="bg-background rounded-full p-5 border-4 border-background shadow-lg mb-4">
                     {step.icon}
                 </div>
                 <h3 className="text-xl font-bold font-headline">{step.title}</h3>
@@ -404,3 +404,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

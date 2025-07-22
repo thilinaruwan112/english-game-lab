@@ -65,7 +65,7 @@ export default function AboutUsPage() {
     return (
         <div className="bg-background text-foreground">
             <motion.section
-                className="text-center py-20 bg-primary/5"
+                className="text-center py-20 bg-secondary"
                 initial="hidden"
                 animate="visible"
                 variants={sectionVariants}
@@ -77,7 +77,7 @@ export default function AboutUsPage() {
             </motion.section>
 
             <motion.section 
-                className="py-16"
+                className="py-16 bg-background"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -117,7 +117,7 @@ export default function AboutUsPage() {
             </motion.section>
             
             <motion.section 
-                className="py-16"
+                className="py-16 bg-background"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -182,3 +182,5 @@ export default function AboutUsPage() {
         </div>
     );
 }
+
+    
