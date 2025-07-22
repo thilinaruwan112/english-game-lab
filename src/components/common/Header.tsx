@@ -18,7 +18,7 @@ import { useLanguage } from '@/context/language-context';
 
 const navLinks = [
     { href: '/', label: { en: 'Home', si: 'මුල් පිටුව' } },
-    { href: '/lessons', label: { en: 'Courses', si: 'පාඨමාලා' } },
+    { href: '/course', label: { en: 'Courses', si: 'පාඨමාලා' } },
     { href: '/about', label: { en: 'About Us', si: 'අප ගැන' } },
     { href: '/success-stories', label: { en: 'Success Stories', si: 'සාර්ථක කතා' } },
     { href: '/contact', label: { en: 'Contact', si: 'සම්බන්ධ වන්න' } },

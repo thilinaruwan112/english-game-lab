@@ -57,7 +57,7 @@ export function Footer() {
             <h3 className="font-headline font-semibold mb-4">{content.quickLinks}</h3>
             <ul className="space-y-2">
               <li><Link href={`/${language}`} className="text-sm text-muted-foreground hover:text-primary">{content.home}</Link></li>
-              <li><Link href={`/${language}/lessons`} className="text-sm text-muted-foreground hover:text-primary">{content.courses}</Link></li>
+              <li><Link href={`/${language}/course`} className="text-sm text-muted-foreground hover:text-primary">{content.courses}</Link></li>
               <li><Link href={`/${language}/about`} className="text-sm text-muted-foreground hover:text-primary">{content.about}</Link></li>
               <li><Link href={`/${language}/success-stories`} className="text-sm text-muted-foreground hover:text-primary">{content.successStories}</Link></li>
             </ul>

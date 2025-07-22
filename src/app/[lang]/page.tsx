@@ -108,7 +108,7 @@ const content = {
         faq4Answer: "අනිවාර්යයෙන්ම! අපගේ වේදිකාව පරිගණක, ටැබ්ලට් සහ ජංගම දුරකථන වල ඉතා හොඳින් ක්‍රියා කරයි, එබැවින් ඔබට ඕනෑම වේලාවක, ඕනෑම තැනක සිට ඉගෙන ගත හැකිය.",
         ctaTitle: "ඔබේ ගමන ආරම්භ කිරීමට සූදානම්ද?",
         ctaSubtitle: "තවත් සිය ගණනක් සිසුන් හා එක් වී ඉංග්‍රීසි ප්‍රගුණ කිරීමේ පළමු පියවර ගන්න.",
-        getStarted: "නොමිලේ ආරම්භ කරන්න",
+        getStarted: "Get Started for Free",
     }
 }
 
@@ -266,7 +266,7 @@ export default function Home() {
       
       <motion.section 
         id="features"
-        className="text-center py-12 md:py-24 bg-secondary"
+        className="text-center py-12 md:py-24 bg-background"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -304,7 +304,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-12 md:py-24 bg-background"
+        className="py-12 md:py-24 bg-secondary"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -334,7 +334,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-12 md:py-24 bg-secondary"
+        className="py-12 md:py-24 bg-background"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -375,7 +375,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-12 md:py-24 bg-background"
+        className="py-12 md:py-24 bg-secondary"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -421,7 +421,7 @@ export default function Home() {
             </p>
             <div className="mt-8">
             <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90 transition-transform hover:scale-105">
-                <Link href={`/${language}/lessons`}>{t.getStarted}</Link>
+                <Link href={`/${language}/course`}>{t.getStarted}</Link>
             </Button>
             </div>
         </div>
@@ -430,5 +430,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
