@@ -2,7 +2,7 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { BookOpenCheck, Target, BotMessageSquare, BarChart3, Star, Quote, CheckCircle, UserPlus, PencilRuler, Goal } from 'lucide-react';
+import { BookOpenCheck, Target, BotMessageSquare, BarChart3, Star, Quote, CheckCircle, UserPlus, PencilRuler, Goal, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -200,6 +200,14 @@ export default function Home() {
       { q: t.faq4Question, a: t.faq4Answer },
   ]
 
+    const scrollToFeatures = () => {
+        const featuresSection = document.getElementById('features');
+        if (featuresSection) {
+            featuresSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+
   return (
     <div className="space-y-0">
       <section className="relative flex items-center justify-center min-h-[70vh] text-center text-white">
@@ -212,7 +220,7 @@ export default function Home() {
             data-ai-hint="classroom students"
         />
         <div className="absolute inset-0 bg-black/70 z-10"></div>
-        <div className="relative z-20 container mx-auto px-4">
+        <div className="relative z-20 container mx-auto px-4 flex flex-col justify-center items-center h-full">
             <motion.div 
                 className="max-w-3xl mx-auto space-y-6"
                 initial={{ opacity: 0, y: 20 }}
@@ -234,11 +242,25 @@ export default function Home() {
                     </Button>
                 </div>
             </motion.div>
+            <motion.div
+                className="absolute bottom-4 left-1/2 -translate-x-1/2"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+            >
+                <button
+                    onClick={scrollToFeatures}
+                    className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                    aria-label="Scroll down"
+                >
+                    <ChevronDown className="w-8 h-8 text-white" />
+                </button>
+            </motion.div>
         </div>
       </section>
       
       <motion.section 
-        className="text-center py-24 bg-background px-4"
+        id="features"
+        className="text-center py-24 bg-secondary px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -276,7 +298,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-24 bg-secondary px-4"
+        className="py-24 bg-background px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -306,7 +328,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-24 bg-background px-4"
+        className="py-24 bg-secondary px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -349,7 +371,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-24 bg-secondary px-4"
+        className="py-24 bg-background px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -368,7 +390,7 @@ export default function Home() {
                         variants={itemVariants}
                         transition={{ delay: index * 0.1 }}
                       >
-                          <AccordionItem value={`item-${index}`} className="bg-background border border-border rounded-2xl px-6">
+                          <AccordionItem value={`item-${index}`} className="bg-secondary border border-border rounded-2xl px-6">
                               <AccordionTrigger className="text-left font-bold text-lg hover:no-underline">{faq.q}</AccordionTrigger>
                               <AccordionContent className="text-muted-foreground pt-2">
                                   {faq.a}
@@ -404,3 +426,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
