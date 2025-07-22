@@ -12,9 +12,9 @@ export function Footer() {
       description: "A fun and interactive way for Sri Lankan students to master English for their O/L exams and beyond.",
       quickLinks: "Quick Links",
       home: "Home",
-      lessons: "Lessons",
-      pronunciation: "Pronunciation",
-      progress: "Progress",
+      courses: "Courses",
+      about: "About Us",
+      successStories: "Success Stories",
       support: "Support",
       contact: "Contact",
       faq: "FAQ",
@@ -25,9 +25,9 @@ export function Footer() {
       description: "ශ්‍රී ලාංකික සිසුන්ට O/L විභාගය සහ ඉන් ඔබ්බට ඉංග්‍රීසි ප්‍රගුණ කිරීම සඳහා විනෝදජනක සහ අන්තර්ක්‍රියාකාරී ක්‍රමයක්.",
       quickLinks: "ඉක්මන් සබැඳි",
       home: "මුල් පිටුව",
-      lessons: "පාඩම්",
-      pronunciation: "උච්චාරණය",
-      progress: "ප්‍රගතිය",
+      courses: "පාඨමාලා",
+      about: "අප ගැන",
+      successStories: "සාර්ථක කතා",
       support: "සහාය",
       contact: "සම්බන්ධ වන්න",
       faq: "නිතර අසන ප්‍රශ්න",
@@ -57,7 +57,9 @@ export function Footer() {
             <h3 className="font-headline font-semibold mb-4">{content.quickLinks}</h3>
             <ul className="space-y-2">
               <li><Link href={`/${language}`} className="text-sm text-muted-foreground hover:text-primary">{content.home}</Link></li>
-              <li><Link href={`/${language}/lessons`} className="text-sm text-muted-foreground hover:text-primary">{content.lessons}</Link></li>
+              <li><Link href={`/${language}/lessons`} className="text-sm text-muted-foreground hover:text-primary">{content.courses}</Link></li>
+              <li><Link href={`/${language}/about`} className="text-sm text-muted-foreground hover:text-primary">{content.about}</Link></li>
+              <li><Link href={`/${language}/success-stories`} className="text-sm text-muted-foreground hover:text-primary">{content.successStories}</Link></li>
             </ul>
           </div>
 

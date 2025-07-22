@@ -17,10 +17,12 @@ import { ThemeSwitcher } from '@/components/theme-switcher';
 import { useLanguage } from '@/context/language-context';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/lessons', label: 'Lessons' },
-  { href: '/contact', label: 'Contact' },
-  { href: '/register', label: 'Register' },
+    { href: '/', label: { en: 'Home', si: 'මුල් පිටුව' } },
+    { href: '/lessons', label: { en: 'Courses', si: 'පාඨමාලා' } },
+    { href: '/about', label: { en: 'About Us', si: 'අප ගැන' } },
+    { href: '/success-stories', label: { en: 'Success Stories', si: 'සාර්ථක කතා' } },
+    { href: '/contact', label: { en: 'Contact', si: 'සම්බන්ධ වන්න' } },
+    { href: '/register', label: { en: 'Register', si: 'ලියාපදිංචි වන්න' } },
 ];
 
 export function Header() {
@@ -42,7 +44,7 @@ export function Header() {
       return '/' + pathSegments.join('/');
   }
 
-  const NavLink = ({ href, label }: { href: string; label: string }) => {
+  const NavLink = ({ href, label }: { href: string; label: {en: string, si: string} }) => {
     const localizedHref = getLocalizedPath(href);
     const isActive = pathname === localizedHref || (href === '/' && pathname === `/${language}`);
     return (
@@ -54,7 +56,7 @@ export function Header() {
           )}
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          {label}
+          {label[language]}
         </Link>
     );
   };
@@ -71,7 +73,7 @@ export function Header() {
         
         <div className="flex flex-1 items-center justify-start md:justify-center">
           <nav className="hidden md:flex items-center space-x-6">
-            {navLinks.map(link => <NavLink key={link.href} {...link} />)}
+            {navLinks.map(link => <NavLink key={link.href} href={link.href} label={link.label} />)}
           </nav>
         </div>
         
@@ -108,7 +110,7 @@ export function Header() {
                       <span className="font-headline">EnglishGameLab</span>
                     </Link>
                     <div className="flex flex-col space-y-4">
-                      {navLinks.map(link => <NavLink key={link.href} {...link} />)}
+                      {navLinks.map(link => <NavLink key={link.href} href={link.href} label={link.label} />)}
                     </div>
                   </div>
                 </SheetContent>
