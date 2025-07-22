@@ -139,7 +139,7 @@ export default function Home() {
             className="absolute inset-0 z-0"
             data-ai-hint="classroom students"
         />
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-black/70 z-10"></div>
         <div className="relative z-20 container mx-auto px-4">
             <div className="max-w-3xl mx-auto space-y-6">
                 <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
@@ -161,22 +161,24 @@ export default function Home() {
       </section>
       
       <section className="text-center py-24 bg-secondary px-4">
-        <h2 className="text-3xl font-bold font-headline text-primary">{t.featuresTitle}</h2>
-        <p className="mt-2 max-w-2xl mx-auto text-lg text-foreground/80">{t.featuresSubtitle}</p>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto">
-          {features.map((feature) => (
-            <div key={feature.title} className="flex flex-col items-center text-center p-6">
-              <div className="mb-4 bg-primary/10 p-4 rounded-full">
-                {feature.icon}
-              </div>
-              <h3 className="font-headline text-xl font-semibold">{feature.title}</h3>
-              <p className="mt-2 text-foreground/70">{feature.description}</p>
+        <div className="container mx-auto">
+            <h2 className="text-3xl font-bold font-headline text-secondary-foreground">{t.featuresTitle}</h2>
+            <p className="mt-2 max-w-2xl mx-auto text-lg text-secondary-foreground/80">{t.featuresSubtitle}</p>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature) => (
+                <div key={feature.title} className="flex flex-col items-center text-center p-6">
+                <div className="mb-4 bg-primary/10 p-4 rounded-full">
+                    {feature.icon}
+                </div>
+                <h3 className="font-headline text-xl font-semibold text-secondary-foreground">{feature.title}</h3>
+                <p className="mt-2 text-secondary-foreground/70">{feature.description}</p>
+                </div>
+            ))}
             </div>
-          ))}
         </div>
       </section>
 
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 bg-background">
         <div className="grid md:grid-cols-2 gap-12 items-center container mx-auto">
           <div className="relative h-80 w-full rounded-lg overflow-hidden">
             <Image 
@@ -211,29 +213,31 @@ export default function Home() {
       </section>
 
       <section className="text-center py-24 bg-secondary px-4">
-        <h2 className="text-3xl font-bold font-headline text-primary">{t.testimonialsTitle}</h2>
-        <p className="mt-2 max-w-2xl mx-auto text-lg text-foreground/80">{t.testimonialsSubtitle}</p>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto">
-            {testimonials.map((testimonial, index) => (
-                <Card key={index} className="text-left shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
-                    <CardHeader>
-                        <div className="flex items-center gap-4">
-                            <Avatar>
-                                <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint="portrait" />
-                                <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                            </Avatar>
-                            <div>
-                                <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                                <CardDescription>{testimonial.role}</CardDescription>
+        <div className="container mx-auto">
+            <h2 className="text-3xl font-bold font-headline text-secondary-foreground">{t.testimonialsTitle}</h2>
+            <p className="mt-2 max-w-2xl mx-auto text-lg text-secondary-foreground/80">{t.testimonialsSubtitle}</p>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {testimonials.map((testimonial, index) => (
+                    <Card key={index} className="text-left shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
+                        <CardHeader>
+                            <div className="flex items-center gap-4">
+                                <Avatar>
+                                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint="portrait" />
+                                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                                </Avatar>
+                                <div>
+                                    <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                                    <CardDescription>{testimonial.role}</CardDescription>
+                                </div>
                             </div>
-                        </div>
-                    </CardHeader>
-                    <CardContent>
-                        <Quote className="w-8 h-8 text-primary/20 mb-2" />
-                        <p className="text-foreground/80 italic">{testimonial.testimonial}</p>
-                    </CardContent>
-                </Card>
-            ))}
+                        </CardHeader>
+                        <CardContent>
+                            <Quote className="w-8 h-8 text-primary/20 mb-2" />
+                            <p className="text-card-foreground/80 italic">{testimonial.testimonial}</p>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
         </div>
       </section>
 
