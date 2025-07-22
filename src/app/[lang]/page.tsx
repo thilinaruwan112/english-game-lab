@@ -202,7 +202,7 @@ export default function Home() {
 
   return (
     <div className="space-y-0">
-      <section className="relative flex items-center justify-center min-h-[calc(100vh-theme(spacing.14))] text-center text-white">
+      <section className="relative flex items-center justify-center min-h-[70vh] text-center text-white">
         <Image 
             src="https://images.unsplash.com/photo-1603373577790-b635631b0302?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjbGFzc3Jvb20lMjBzdHVkZW50c3xlbnwwfHx8fDE3NTMxNjk2MTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Students learning in a classroom"
@@ -294,7 +294,7 @@ export default function Home() {
                 variants={itemVariants}
                 transition={{ delay: index * 0.2 }}
               >
-                <div className="bg-background rounded-full p-5 border-4 border-background shadow-lg mb-4">
+                <div className="bg-background rounded-full p-5 border-4 border-secondary shadow-lg mb-4">
                     {step.icon}
                 </div>
                 <h3 className="text-xl font-bold font-headline">{step.title}</h3>
@@ -404,5 +404,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
